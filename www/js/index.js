@@ -487,7 +487,7 @@ function provino() {
 				  //window.location.href = "#article4";
 				  
 				  if(isMobileScreenWidth2 < 768){
-				  contenuto = contenuto + "<tr title='"+ item.event_id +"'><td width='90%' align='center'><table width='100%' align='left' valign='center'><tr><td width='100%' align='left' colspan='2' valign='center'><div id='datepush' class='visione'>"+ item.activated_at +" - "+ item.expire_on +" </div></td></tr><tr><td width='100%' colspan='2' valign='center'><div id='titolopush' class='visione'>"+ item.title +"</div> </td></tr></table></td><td width='120' align='center' valign='center'><img id='noletto' src='img/notRead.png' width='42px'></td></tr><tr><td colspan='2'><hr></td></tr>"
+				  contenuto = contenuto + "<tr><td width='90%' align='center'>Nessuna Notifica</td></tr>"
 				  }
 				  else{
 					 contenuto = contenuto + "<tr><td width='90%' align='center'>Nessuna Notifica</td></tr>"
