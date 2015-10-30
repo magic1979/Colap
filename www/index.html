@@ -45,94 +45,6 @@
 						
 						</script>
 						
-				<script type="text/javascript">
-				<!--
-				
-				var keyStr = "ABCDEFGHIJKLMNOP" +
-				"QRSTUVWXYZabcdef" +
-				"ghijklmnopqrstuv" +
-				"wxyz0123456789+/" +
-				"=";
-				
-				function encode64(input) {
-					input = escape(input);
-					var output = "";
-					var chr1, chr2, chr3 = "";
-					var enc1, enc2, enc3, enc4 = "";
-					var i = 0;
-					
-					do {
-						chr1 = input.charCodeAt(i++);
-						chr2 = input.charCodeAt(i++);
-						chr3 = input.charCodeAt(i++);
-						
-						enc1 = chr1 >> 2;
-						enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
-						enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
-						enc4 = chr3 & 63;
-						
-						if (isNaN(chr2)) {
-							enc3 = enc4 = 64;
-						} else if (isNaN(chr3)) {
-							enc4 = 64;
-						}
-						
-						output = output +
-						keyStr.charAt(enc1) +
-						keyStr.charAt(enc2) +
-						keyStr.charAt(enc3) +
-						keyStr.charAt(enc4);
-						chr1 = chr2 = chr3 = "";
-						enc1 = enc2 = enc3 = enc4 = "";
-					} while (i < input.length);
-					
-					return output;
-				}
-			
-			function decode64(input) {
-				var output = "";
-				var chr1, chr2, chr3 = "";
-				var enc1, enc2, enc3, enc4 = "";
-				var i = 0;
-				
-				// remove all characters that are not A-Z, a-z, 0-9, +, /, or =
-				var base64test = /[^A-Za-z0-9\+\/\=]/g;
-				if (base64test.exec(input)) {
-					alert("There were invalid base64 characters in the input text.\n" +
-						  "Valid base64 characters are A-Z, a-z, 0-9, '+', '/',and '='\n" +
-						  "Expect errors in decoding.");
-				}
-				input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
-				
-				do {
-					enc1 = keyStr.indexOf(input.charAt(i++));
-					enc2 = keyStr.indexOf(input.charAt(i++));
-					enc3 = keyStr.indexOf(input.charAt(i++));
-					enc4 = keyStr.indexOf(input.charAt(i++));
-					
-					chr1 = (enc1 << 2) | (enc2 >> 4);
-					chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
-					chr3 = ((enc3 & 3) << 6) | enc4;
-					
-					output = output + String.fromCharCode(chr1);
-					
-					if (enc3 != 64) {
-						output = output + String.fromCharCode(chr2);
-					}
-					if (enc4 != 64) {
-						output = output + String.fromCharCode(chr3);
-					}
-					
-					chr1 = chr2 = chr3 = "";
-					enc1 = enc2 = enc3 = enc4 = "";
-					
-				} while (i < input.length);
-				
-				return unescape(output);
-			}
-			
-				//--></script>
-			
 						
 						<style type="text/css">
 							* {
@@ -1634,7 +1546,7 @@
 							</tr>
 							<tr>
 								<td align="center">
-									<div id="titolo" class="visione4"><b>Emiliana Alessandrucci</b></div>
+									<div id="titolo" class="visione4"><b>E. Alessandrucci</b></div>
 								</td>
 							</tr>
 						</table>
@@ -1684,7 +1596,7 @@
 				</tr>
 				<tr>
 					<td width="100%" align="center" valign="center">
-						<a href="javascript:aprimail0()"><font color="#fff" size="4"><b>info@tesav.it</b></font></a>
+						<a href="javascript:aprimail0()"><font color="#fff" size="4"><b>info@ermesitalia.it</b></font></a>
 					</td>
 				</tr>
 				<tr>
@@ -1733,7 +1645,7 @@
 				</tr>
 				<tr>
 					<td width="100%" align="center" valign="center">
-						<a href="javascript:aprimail0()"><font color="#fff" size="4"><b>info@tesav.it</b></font></a>
+						<a href="javascript:aprimail0()"><font color="#fff" size="4"><b>info@ermesitalia.it</b></font></a>
 					</td>
 				</tr>
 				<tr>
@@ -2508,7 +2420,7 @@
 				 </tr>
 				 <tr>
 					 <td width="100%" colspan="2" align="left">
-						 <a href="tel:+39064434023" class="visione2"><div id="phoneV" class="visione">+39 06 44340239</div></a>
+						 <a href="tel:+390644340239" class="visione2"><div id="phoneV" class="visione">+39 06 44340239</div></a>
 						 
 					 </td>
 				 </tr>
@@ -2528,7 +2440,7 @@
 				 </tr>
 				 <tr>
 					 <td width="100%" colspan="2" align="left">
-						 <a href="tel:+393355306568" class="visione2"><div id="mobileV" class="visione">+39 329 5306568</div></a>
+						 <a href="tel:+393295306568" class="visione2"><div id="mobileV" class="visione">+39 329 5306568</div></a>
 					 </td>
 				 </tr>
 				 <tr>
@@ -2547,7 +2459,8 @@
 				 </tr>
 				 <tr>
 					 <td width="100%" colspan="2" align="left">
-						 <a href="javascript:aprimail()"><div id="emailV" class="visione2">segreteria@colap.it</div></a>
+						 <a href="javascript:aprimail1()"><div id="emailV" class="visione2">segreteria@colap.it</div></a><br>
+						 <a href="javascript:aprimail2()"><div id="emailV2" class="visione2">ufficiostampa@colap.it</div></a>
 					 </td>
 				 </tr>
 				 <tr>
@@ -2566,7 +2479,8 @@
 				 </tr>
 				 <tr>
 					 <td width="100%" colspan="2" align="left">
-						 <a href="javascript:apriweb()"><div id="webV" class="visione2"><b>www.colap.it</b></div></a>
+						 <a href="javascript:apriweb()"><div id="webV" class="visione2"><b>www.colap.it</b></div></a><br>
+						  <a href="javascript:apriweb2()"><div id="webV2" class="visione2"><b>www.roadmapcolap.it</b></div></a>
 					 </td>
 				 </tr>
 				 <tr>

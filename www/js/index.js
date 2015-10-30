@@ -71,8 +71,10 @@ var app = {
 			    $("#mobileV").attr("class", "visione2DROID");
 			    $("#emailtext").attr("class", "visione2DROID");
 			    $("#emailV").attr("class", "visione2DROID");
+				 $("#emailV2").attr("class", "visione2DROID");
 			    $("#webtext").attr("class", "visione2DROID");
 			    $("#webV").attr("class", "visione2DROID");
+				$("#webV2").attr("class", "visione2DROID");
 				
 				initscroll()
 		}
@@ -110,8 +112,10 @@ var app = {
 			$("#mobileV").attr("class", "visione2IPAD");
 			$("#emailtext").attr("class", "visioneIPAD");
 			$("#emailV").attr("class", "visione2IPAD");
+			$("#emailV2").attr("class", "visione2IPAD");
 			$("#webtext").attr("class", "visioneIPAD");
 			$("#webV").attr("class", "visione2IPAD");
+			$("#webV2").attr("class", "visione2IPAD");
 
             $("#video").attr("width", "460px");
             $("#video2").attr("width", "460px");
@@ -486,7 +490,7 @@ function provino() {
 				  contenuto = contenuto + "<tr title='"+ item.event_id +"'><td width='90%' align='center'><table width='100%' align='left' valign='center'><tr><td width='100%' align='left' colspan='2' valign='center'><div id='datepush' class='visione'>"+ item.activated_at +" - "+ item.expire_on +" </div></td></tr><tr><td width='100%' colspan='2' valign='center'><div id='titolopush' class='visione'>"+ item.title +"</div> </td></tr></table></td><td width='120' align='center' valign='center'><img id='noletto' src='img/notRead.png' width='42px'></td></tr><tr><td colspan='2'><hr></td></tr>"
 				  }
 				  else{
-					 contenuto = contenuto + "<tr title='"+ item.event_id +"'><td width='90%' align='center'><table width='100%' align='left' valign='center'><tr><td width='100%' align='left' colspan='2' valign='center'><div id='datepush' class='visioneIPAD'>"+ item.activated_at +" - "+ item.expire_on +" </div></td></tr><tr><td width='100%' colspan='2' valign='center'><div id='titolopush' class='visioneIPAD'>"+ item.title +"</div> </td></tr></table></td><td width='120' align='center' valign='center'><img id='noletto' src='img/notRead.png' width='80px'></td></tr><tr><td colspan='2'><hr></td></tr>"
+					 contenuto = contenuto + "<tr><td width='90%' align='center'>Nessuna Notifica</td></tr>"
 				  }
 
 				  
@@ -533,12 +537,14 @@ function provino() {
 		   error: function(){
 		   $(".spinner").hide();
 		   
-		   navigator.notification.alert(
+		   $("#contenuto").html("<tr><td width='90%' align='center'>Nessuna Notifica</td></tr>");
+		   
+		   /*navigator.notification.alert(
 										'Nessuna Connessione Internet, Riprova Tra Qualche Minuto',  // message
 										alertDismissed,         // callback
 										'Connessione Internet',            // title
 										'OK'                  // buttonName
-										);
+										);*/
 		   
 		   
 		   },
@@ -599,7 +605,7 @@ function provino2(id) {
 				  }
 				  else{
 				  
-				  contenuto2 = contenuto2 + "<table width='98%' height='100%' border='0' valign='center' align='center' class='div8'><tr><td width='100%' align='center' colspan='2'>Nessuna Notifica Presente.</td></tr><tr><td width='100%' colspan='2'>Titolo della notifica</td></tr><tr><td><hr></td></tr><tr> <td width='100%' align='left'></td></tr><tr> <td width='100%'>&nbsp;</td></tr><tr><td width='100%' align='center' colspan='2'></td></tr></table>"
+				  contenuto2 = contenuto2 + "<table width='98%' height='100%' border='0' valign='center' align='center' class='div8'><tr><td width='100%' align='center' colspan='2'>Nessuna Notifica Presente.</td></tr></table>"
 				  }
 		   
 		   $("#contenuto2").html(contenuto2);
@@ -624,17 +630,18 @@ function provino2(id) {
 		   document.addEventListener('DOMContentLoaded', loaded, false);
 		   
 
-		   
 		   },
 		   error: function(){
 		   $(".spinner").hide();
 		   
-		   navigator.notification.alert(
+		    $("#contenuto2").html("<table width='98%' height='100%' border='0' valign='center' align='center' class='div8'><tr><td width='100%' align='center' colspan='2'>Nessuna Notifica Presente.</td></tr></table>");
+		   
+		   /*navigator.notification.alert(
 										'Nessuna Connessione Internet, Riprova Tra Qualche Minuto',  // message
 										alertDismissed,         // callback
 										'Connessione Internet',            // title
 										'OK'                  // buttonName
-										);
+										);*/
 		   
 		   
 		   },
@@ -691,12 +698,12 @@ function checkpush() {
 		   
 		   $(".spinner").hide();
 		
-		   navigator.notification.alert(
+		   /*navigator.notification.alert(
 										'Nessuna Connessione Internet, Riprova Dopo ',  // message
 										alertDismissed,         // callback
 										'Connessione Internet',            // title
 										'OK'                  // buttonName
-										);
+										);*/
 		   
 		   },
 		   dataType:"json"});
@@ -735,12 +742,12 @@ function regToken() {
 				
 			$(".spinner").hide();
 		   
-		   navigator.notification.alert(
+		   /*navigator.notification.alert(
 				'Nessuna Connessione Internet, Riprova In Pochi Minuti',  // message
 				alertDismissed,         // callback
 				'Connessione Internet',            // title
 				'OK'                  // buttonName
-			);
+			);*/
 		   
 		   },
 		   dataType:"json"});
@@ -878,6 +885,10 @@ function apriweb () {
 	var ref = window.open('http://www.colap.it/', '_system', 'location=no');
 }
 
+function apriweb2 () {
+	var ref = window.open('http://www.roadmapcolap.it/', '_system', 'location=no');
+}
+
 function aprimail () {
 
 window.plugin.email.open({
@@ -903,7 +914,29 @@ window.plugin.email.open({
 function aprimail0 () {
 
 window.plugin.email.open({
-	to:      "info@tesav.it",
+	to:      "info@ermesitalia.it",
+	subject: "info",
+	body:    "",
+	isHtml:  true
+});
+
+}
+
+function aprimail1 () {
+
+window.plugin.email.open({
+	to:      "segreteria@colap.it",
+	subject: "info",
+	body:    "",
+	isHtml:  true
+});
+
+}
+
+function aprimail2 () {
+
+window.plugin.email.open({
+	to:      "ufficiostampa@colap.it",
 	subject: "info",
 	body:    "",
 	isHtml:  true
