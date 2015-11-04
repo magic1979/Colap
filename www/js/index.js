@@ -914,7 +914,7 @@ window.plugin.email.open({
 function aprimail0 () {
 
 window.plugin.email.open({
-	to:      "info@ermesitalia.it",
+	to:      "info@tesav.it",
 	subject: "info",
 	body:    "",
 	isHtml:  true
